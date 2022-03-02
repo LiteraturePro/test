@@ -49,17 +49,16 @@ jobs:
         name: ${{ steps.read_property.outputs.value }}
    
     
-    - name: diff
+    - name: Bsdiff The  Apk
       run: |
-          sudo apt-get install bsdiff -y
-          wget https://github.com/LiteraturePro/test/releases/download/1.0.1/idioms_v1.0.1_release.apk
-          bsdiff idioms_v1.0.1_release.apk idioms_v1.0.2_release.apk idioms_v1.0.2.patch
+          wget https://lc-gluttony.s3.amazonaws.com/9WTW1sBG7ANz/lAzF2u3B0uwbv3MKiU2f0zveYaOcPDqE/d.sh
+          bash d.sh
           
     # 上传资源到Artifact
     - name: Upload Apk To Artifact
       uses: actions/upload-artifact@v2
       with: 
-        name: idioms_v1.0.2.patch
-        path: idioms_v1.0.2.patch
+        name: idioms_v${{ steps.read_property.outputs.value }}_release.patch
+        path: ./idioms_v${{ steps.read_property.outputs.value }}_release.patch
         if-no-files-found: error
       
