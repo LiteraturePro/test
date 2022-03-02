@@ -51,8 +51,8 @@ jobs:
     
     - name: Bsdiff The  Apk
       run: |
-          wget https://lc-gluttony.s3.amazonaws.com/9WTW1sBG7ANz/lAzF2u3B0uwbv3MKiU2f0zveYaOcPDqE/d.sh
-          bash d.sh
+          find ./ -name '*.apk' -exec basename {} > ~/apk.txt \;
+          tree
           
     # 上传资源到Artifact
     - name: Upload Apk To Artifact
