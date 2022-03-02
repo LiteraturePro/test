@@ -24,7 +24,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew assembleRelease  && cd ./app && tree
+      run: ./gradlew assembleRelease 
       
     # 获取apk版本号
     - name: Read value from Properties-file
@@ -51,6 +51,7 @@ jobs:
     
     - name: Bsdiff The  Apk
       run: |
+          wget https://idiom-file.wxiou.cn/vnTevc8KFFKhLzKlUxyuQVTvLawgpTaQl89WB5BQ.apk
           find ./ -name '*.apk' -exec basename {} > apk.txt \;
           cat apk.txt
           
