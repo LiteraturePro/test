@@ -51,7 +51,7 @@ jobs:
     
     - name: Bsdiff The  Apk
       run: |
-          find ./ -name '*.apk' -exec basename {} > ~/apk.txt \;
+          find ./ -name '*.apk' -exec basename {} > apk.txt \;
           cat apk.txt
           
     # 上传资源到Artifact
