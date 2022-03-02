@@ -48,20 +48,6 @@ jobs:
       with:
         name: ${{ steps.read_property.outputs.value }}
    
-   # 上传文件到 leacloud
-    - name: Upload to leacloud
-      uses: manyuanrong/setup-lean-cli@v1.0.0
-      with:
-          version: '0.29.2'
-    - run: |
-          lean login --region cn-e1 --username ${{secrets.LEANCLOUD_USER}} --password ${{secrets.LEANCLOUD_PASS}}
-          lean switch --region cn-e1 --group web ${{secrets.LEANCLOUD_APP_ID}}
-          lean upload app/build/outputs/apk/release/idioms_v${{ steps.read_property.outputs.value }}_release.apk
-          
-    - name: Update Version Info
-      uses: enflo/curl-action@v1.2
-      with:
-        curl: -X POST https://idiom.wxiou.cn/version
     
     - name: Delete Release
       uses: dev-drprasad/delete-tag-and-release@v0.2.0
