@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="match_parent"
+    tools:context=".navigation.main.Main_news">
+    <include
+        android:id="@+id/include"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        layout="@layout/fragment_me_topbar"/>
+    <ScrollView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="64dp"
+            style="@style/InputBoxStyle2">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+
+
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+
+                    android:layout_height="60dp">
+                    <TextView
+                        android:id="@+id/news"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:textSize="20sp"
+                        android:textColor="#000000"
+                        android:textStyle="bold">
+                    </TextView>
+
+                </LinearLayout>
+                <LinearLayout
+
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        >
+                        <cn.ovzv.idioms.help.CircleImageView
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:srcCompat="@drawable/fragment_me_message_setting" />
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:layout_height="20dp"
+                                android:gravity=""
+                                android:text="新闻中心"
+                                android:textSize="12sp"
+                                android:textColor="#000000"
+                                android:textStyle="bold">
+                            </TextView>
+                            <TextView
+                                android:id="@+id/time"
+                                android:layout_marginBottom="10dp"
+                                android:layout_width="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:layout_height="match_parent"
+                                android:gravity=""
+                                android:textSize="10sp">
+                            </TextView>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/text"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="#000000"
+                            android:typeface="serif">
+                        </TextView>
+
+                    </LinearLayout>
+                    <ImageView
+                        android:id="@+id/image"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp">
+                    </ImageView>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/detail_page_comment_container"
+                android:layout_below="@+id/detail_page_above_container"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <cn.ovzv.idioms.help.CommentExpandableListView
+                    android:id="@+id/detail_page_lv_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null"
+
+                    android:listSelector="@android:color/transparent"
+                    android:scrollbars="none"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:elevation="2dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/detail_page_do_comment"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:textColor="#B6B6B6"
+            android:textSize="12sp"
+            android:text="说点什么吧..."
+            android:background="@drawable/fragment_main_news_comment_bt_selector"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="22dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="18dp"/>
+        <ImageView
+            android:id="@+id/new_loves"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/fragment_main_news_icon_collect"/>
+        <TextView
+            android:id="@+id/loves_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#9A9A9A"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+            android:text="0"/>
+
+        <ImageView
+            android:id="@+id/new_love"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/fragment_main_news_icon_work_like"
+            android:layout_marginLeft="20dp" />
+        <TextView
+            android:id="@+id/love_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#9A9A9A"
+            android:textSize="14sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="14dp"
+            android:text="0"/>
+
+    </LinearLayout>
+
+</LinearLayout>

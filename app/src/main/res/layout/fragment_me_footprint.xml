@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/include"
+        layout="@layout/fragment_me_topbar"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:background="@drawable/fragment_main_words_bg"
+        android:layout_height="wrap_content">
+        <ListView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="0dp"
+            android:layout_marginBottom="10dp"
+            android:divider="#ffffff"
+            android:id="@+id/listview">
+
+        </ListView>
+
+    </LinearLayout>
+
+
+</LinearLayout>
